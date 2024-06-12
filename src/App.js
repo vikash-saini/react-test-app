@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [name, setName] = useState("");
+  const [data, setData] = useState("");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img
+        height="200px"
+        src="https://cdn.siasat.com/wp-content/uploads/2023/05/RK-AI-780x470.jpg"
+        alt="AI generated Image"
+      />
+      <br />
+      <p>let's code</p>
+      <br />
+      <input
+        type="text"
+        placeholder="enter username"
+        name="Username"
+        id="userId"
+        onChange={(e) => setName(e.target.value)}
+      />
+      <br />
+      Click me{" "}
+      <button onClick={() => setData("updated data")}>update Code</button>
+      <br />
+      <h2>{data}</h2>
     </div>
   );
 }
